@@ -3,7 +3,7 @@ const touchs = document.querySelectorAll('.piano__key');
 const play = (e) => {
     console.log(e)
     let key = null;
-    if (e.pointerType === "mouse" || e.pointerType === "touch") {
+    if (e.pointerType === "mouse" || e.type === "touchstart") {
         key = e.target.attributes[0].value;
     } else {
         key = e.keyCode;
@@ -32,11 +32,11 @@ const removeTransition = (e) => {
     }
 }
 
-const test = () => {
-    alert('ok')
+const test = (e) => {
+    console.log(e)
 }
 
 touchs.forEach(touch => touch.addEventListener('transitionend', removeTransition));
 touchs.forEach(touch => touch.addEventListener('click', play));
-touchs.forEach(touch => touch.addEventListener('touchstart', test));
+touchs.forEach(touch => touch.addEventListener('touchstart', play));
 window.addEventListener('keydown', play);
