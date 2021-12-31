@@ -9,6 +9,7 @@ Tags: piano kit
 
 Table of Contents:
   0. GLOBAL
+  1. RESPONSIVE
 
 **************************************************************/
 
@@ -27,7 +28,7 @@ body {
   height: 250px;
   padding: 2rem 2rem 0 2rem;
   background: linear-gradient(to bottom right,rgba(0,0,0,0.3),
-  rgba(0,0,0,0)),url('/assets/img/wood.png');
+  rgba(0,0,0,0)),url('../img/wood.png');
   box-shadow:
     0 0 50px rgba(0,0,0,0.5) inset,
     0 1px rgba(212,152,125,0.2) inset,
@@ -94,3 +95,36 @@ body {
   .piano__key:last-child {
     border-radius: 0 5px 5px 5px;
   }
+
+  .info {
+    color: #fff;
+    text-align: center;
+    font-family: monospace, 'sans-serif';
+  }
+
+  .info > img {
+    filter: invert();
+  }
+
+/************************************************
+1.	RESPONSIVE
+************************************************/
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 425px) {
+  .info {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .piano {
+    display: none;
+  }
+}
