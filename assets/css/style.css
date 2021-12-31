@@ -21,23 +21,14 @@ body {
 }
 
 .piano {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: auto;
   width: 400px;
   height: 250px;
   padding: 2rem 2rem 0 2rem;
-  background: -webkit-gradient(linear,left top, right bottom,from(rgba(0,0,0,0.3)),
-  to(rgba(0,0,0,0))),url('/assets/img/wood.png');
-  background: -o-linear-gradient(top left,rgba(0,0,0,0.3),
-  rgba(0,0,0,0)),url('/assets/img/wood.png');
   background: linear-gradient(to bottom right,rgba(0,0,0,0.3),
   rgba(0,0,0,0)),url('/assets/img/wood.png');
-  -webkit-box-shadow:
-    0 0 50px rgba(0,0,0,0.5) inset,
-    0 1px rgba(212,152,125,0.2) inset,
-    0 5px 15px rgba(0,0,0,0.5);
-          box-shadow:
+  box-shadow:
     0 0 50px rgba(0,0,0,0.5) inset,
     0 1px rgba(212,152,125,0.2) inset,
     0 5px 15px rgba(0,0,0,0.5);
@@ -51,11 +42,7 @@ body {
     border-radius: 0 0 3px 3px;
     float: left;
     margin-left: -16px;
-    -webkit-transition: -webkit-transform 100ms;
-    transition: -webkit-transform 100ms;
-    -o-transition: transform 100ms;
     transition: transform 100ms;
-    transition: transform 100ms, -webkit-transform 100ms;
   }
 
   .piano__key:first-child {
@@ -68,6 +55,42 @@ body {
     z-index: 1;
     border-left:1px solid #bbb;
     border-bottom:1px solid #bbb;
-    -webkit-box-shadow:-1px 0 0 rgba(255,255,255,0.8) inset,0 0 5px #ccc inset,0 0 3px rgba(0,0,0,0.2);
-            box-shadow:-1px 0 0 rgba(255,255,255,0.8) inset,0 0 5px #ccc inset,0 0 3px rgba(0,0,0,0.2);
+    box-shadow:-1px 0 0 rgba(255,255,255,0.8) inset,0 0 5px #ccc inset,0 0 3px rgba(0,0,0,0.2);
+    background:linear-gradient(to bottom,#eee 0%,#fff 100%)
+  }
+
+  .play__white {
+    border-top: 1px solid #777;
+    border-left: 1px solid #999;
+    border-bottom: 1px solid #999;
+    transform: scale(0.98);
+    box-shadow: 
+      2px 0 3px rgba(0,0,0,0.1) inset,
+      -5px 5px 20px rgba(0,0,0,0.2) inset,
+      0 0 3px rgba(0,0,0,0.2);
+      background: linear-gradient(to bottom, #fff 0%, #e9e9e9 100%);
+  }
+
+  .black {
+    background-color: black;
+    width: 2rem;
+    height: 125px;
+    z-index: 2;
+    border:1px solid #000;
+    box-shadow:-1px -1px 2px rgba(255,255,255,0.2) inset,0 -5px 2px 3px rgba(0,0,0,0.6) inset,0 2px 4px rgba(0,0,0,0.5);
+    background:linear-gradient(45deg,#222 0%,#555 100%)
+  }
+
+  .play__black {
+    transform: scale(0.999);
+    box-shadow:-1px -1px 2px rgba(255,255,255,0.2) inset,0 -2px 2px 3px rgba(0,0,0,0.6) inset,0 1px 2px rgba(0,0,0,0.5);
+    background:linear-gradient(to right,#444 0%,#222 100%);
+  }
+
+  .piano__key:first-child {
+    border-radius: 5px 0 5px 5px;
+  }
+
+  .piano__key:last-child {
+    border-radius: 0 5px 5px 5px;
   }
