@@ -1,7 +1,11 @@
 const touchs = document.querySelectorAll('.piano__key');
 
+/**
+ * Play music according to the keycode detect
+ * @param {*} e 
+ * @returns {void}
+ */
 const play = (e) => {
-    console.log(e)
     let key = null;
     if (e.pointerType === "mouse" || e.type === "touchstart") {
         key = e.target.attributes[0].value;
@@ -23,6 +27,11 @@ const play = (e) => {
     }
 }
 
+/**
+ * Delete the css class at the end of the animation 
+ * @param {*} e 
+ * @returns {void}
+ */
 const removeTransition = (e) => {
     if (e.propertyName !== "transform") return;
     if(e.target.classList.contains('play__white')) {
@@ -30,10 +39,6 @@ const removeTransition = (e) => {
     } else {
         e.target.classList.remove('play__black');
     }
-}
-
-const test = (e) => {
-    console.log(e)
 }
 
 touchs.forEach(touch => touch.addEventListener('transitionend', removeTransition));
